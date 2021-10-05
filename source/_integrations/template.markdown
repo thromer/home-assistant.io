@@ -268,7 +268,7 @@ template:
 
 ## Rate limiting updates
 
-When there are entities present in the template and no triggers are defined, the template will be re-rendered when one of the entities changes states. To avoid this taking up too many resources in Home Assistant, automatic rate limiting will be automatically applied if too many states are observed.
+When there are entities present in the template and no triggers are defined, the template will be re-rendered when one of the entities changes states. To avoid this taking up too many resources in Home Assistant, rate limiting will be automatically applied if too many states are observed.
 
 <p class='note'>
 <a href='#trigger-based-template-sensors'>Define a trigger</a> to avoid a rate limit and get more control over entity updates.
@@ -510,7 +510,7 @@ template:
   - binary_sensor:
       - name: My Device
         state: >
-          {{ is_state('device_tracker.my_device_nmap', 'home') or is_state('device_tracker.my_device_gps', 'home') }
+          {{ is_state('device_tracker.my_device_nmap', 'home') or is_state('device_tracker.my_device_gps', 'home') }}
         device_class: "presence"
         attributes:
           latitude: >
@@ -531,7 +531,7 @@ template:
 
 ### Change the icon when a state changes
 
-This example demonstrates how to use template to change the icon as it's state changes. This icon is referencing it's own state.
+This example demonstrates how to use template to change the icon as its state changes. This icon is referencing its own state.
 
 {% raw %}
 
